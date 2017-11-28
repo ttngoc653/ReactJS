@@ -1,0 +1,48 @@
+form{
+	width: 87%;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: calc(10vh/6);
+}
+
+input{
+	width: 100%;
+	height: 25px;
+	margin-top: 13px;
+	font-size: 13px;
+	border: none;
+	background: rgb(70,90,97);
+	color: white;
+	text-align: center;
+	border-radius: 6px;
+}
+
+input[type="checkbox"]{
+	background: transparent;
+	border: none;
+	width: auto;
+	flex: 1;
+}
+
+span{
+	flex: 1;
+	color: white;
+	font-size: 13px;
+	padding-top: 17px;
+	text-align: center;
+}
+
+input[type="submit"]{
+	width: 50%;
+	height: 40px;
+}
+input[type="submit"]:hover{
+	font-weight: bolder;
+	color: blue;
+	background-color: white;
+}
+
+label{
+	display: flex;
+	flex-direction: row;
+}

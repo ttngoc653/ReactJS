@@ -3,3 +3,7 @@
 /Login_Signin/node_modules
 /work-management/node_modules
 
+bootstrap_component/package-lock.json
+change_style/package-lock.json
+Login_Signin/package-lock.json
+work-management/package-lock.json

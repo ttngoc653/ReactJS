@@ -6,13 +6,13 @@ class List extends Component {
     super(props);
     this.state={
       filterName: '',
-      filterStatus: 2
+      filterStatus: -1
     };
   }
 
   onChange=(event)=>{
     var name=event.target.name;
-    var value=event.target .value;
+    var value=event.target.value;
     this.props.onFilter(
       name==='filterName'?value:this.state.filterName,
       name==='filterStatus'?value:this.state.filterStatus);

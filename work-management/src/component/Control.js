@@ -6,8 +6,8 @@ class Control extends Component {
   render() {
     return (
       <div className="row mt-15">
-        <Search />
-        <Soft />
+        <Search onSearch={this.props.onSearch} />
+        <Soft onSoft={this.props.onSort}/>
       </div>
     );
   }

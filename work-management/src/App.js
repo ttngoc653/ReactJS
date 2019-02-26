@@ -14,7 +14,10 @@ class App extends Component {
       filter: {
         name: '',
         status: -1
-      }
+      },
+      keyword: '',
+      sortBy: 'name',
+      sortValue: 1
     };
   }
 
@@ -34,17 +37,17 @@ class App extends Component {
       {
         id: 1,
         name: 'Leard program',
-        status: true
+        status: 1
       },
       {
         id: 2,
         name: 'Go to swim',
-        status: false
+        status: 0
       },
       {
         id: 3,
         name: 'Slipe',
-        status: false
+        status: 0
       }
     ];
     this.setState({
@@ -135,20 +138,56 @@ class App extends Component {
     });
   }
 
+  onSearch=(keyword)=>{
+    this.setState({
+      keyword: keyword,
+      filter:{
+        name: '',
+        status: -1
+      }
+    });
+  }
+
+  onSort=(by, value)=>{
+    this.setState({
+      sortBy: by,
+      sortValue: value
+    });
+  }
+
   render() {
-    var { tasks, isDisplayForm, taskEditting, filter } = this.state;
-    console.log(filter);
+    var { tasks, isDisplayForm, taskEditting, filter, keyword, sortBy, sortValue } = this.state;
     if(filter){
       if (filter.name) {
         tasks=tasks.filter((task)=>{
           return task.name.toLowerCase().indexOf(filter.name.toLowerCase())!==-1;
         });
       }
+      if(filter.status!==-1) {
+        tasks=tasks.filter((task)=>{
+          return parseInt(task.status,10)===parseInt(filter.status,10);
+        });
+      }
     }
+    tasks=tasks.filter((task)=>{
+      return task.name.toLowerCase().indexOf(keyword.toLowerCase())!==-1;
+    });
     var elmTaskForm = isDisplayForm  
     ? <TaskForm onSubmit={this.onSubmit} 
                 onCloseForm={this.onCloseForm} 
                 task={taskEditting}/> : '';
+    if(sortBy === 'name'){
+      tasks.sort((a,b)=>{
+        if(a.name > b.name) return sortValue;
+        else if(a.name<b.name) return -sortValue;
+        else return 0;
+      });
+    }else{
+      tasks.sort((a,b)=>{
+        if(a.status !== b.status) return -sortValue;
+        else return 0;
+      });
+    }
     return (
       <div className="container">
         <div className="text-center">
@@ -164,7 +203,9 @@ class App extends Component {
             <button type="button" className="btn btn-danger ml-5" onClick={this.onGenerateData}>
               <span className="fa fa-plus mr-5"></span>Generate Data
             </button>
-            <Control />
+            <Control  onSearch={this.onSearch} 
+                      onSort={this.onSort}
+            />
             <div className="row mt-15">
               <List tasks={ tasks } 
                     onUpdateStatus={this.onUpdateStatus} 

@@ -8,7 +8,6 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      task: [],
       isDisplayForm: 1,
       taskEditting: null,
       filter: {
@@ -19,17 +18,6 @@ class App extends Component {
       sortBy: 'name',
       sortValue: 1
     };
-  }
-
-  componentWillMount(){
-    if(localStorage && localStorage.getItem('tasks')){
-      this.setState({
-        tasks: JSON.parse(localStorage.getItem('tasks'))
-      });
-    }
-    else
-      this.onGenerateData();
-    this.onCloseForm();
   }
 
   onGenerateData = () => {
@@ -156,8 +144,8 @@ class App extends Component {
   }
 
   render() {
-    var { tasks, isDisplayForm, taskEditting, filter, keyword, sortBy, sortValue } = this.state;
-    if(filter){
+    var { isDisplayForm, taskEditting, filter, sortBy, sortValue } = this.state;
+    /*if(filter){
       if (filter.name) {
         tasks=tasks.filter((task)=>{
           return task.name.toLowerCase().indexOf(filter.name.toLowerCase())!==-1;
@@ -171,12 +159,12 @@ class App extends Component {
     }
     tasks=tasks.filter((task)=>{
       return task.name.toLowerCase().indexOf(keyword.toLowerCase())!==-1;
-    });
+    });*/
     var elmTaskForm = isDisplayForm  
     ? <TaskForm onSubmit={this.onSubmit} 
                 onCloseForm={this.onCloseForm} 
                 task={taskEditting}/> : '';
-    if(sortBy === 'name'){
+    /*if(sortBy === 'name'){
       tasks.sort((a,b)=>{
         if(a.name > b.name) return sortValue;
         else if(a.name<b.name) return -sortValue;
@@ -187,7 +175,7 @@ class App extends Component {
         if(a.status !== b.status) return -sortValue;
         else return 0;
       });
-    }
+    }*/
     return (
       <div className="container">
         <div className="text-center">
@@ -207,8 +195,7 @@ class App extends Component {
                       onSort={this.onSort}
             />
             <div className="row mt-15">
-              <List tasks={ tasks } 
-                    onUpdateStatus={this.onUpdateStatus} 
+              <List onUpdateStatus={this.onUpdateStatus} 
                     onDeleteTask={this.onDeleteTask} 
                     onEditTask={this.onEditTask} 
                     onFilter={this.onFilter} />

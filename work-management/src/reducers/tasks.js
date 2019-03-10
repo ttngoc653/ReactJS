@@ -18,7 +18,14 @@ var myReducer=(state=initialState, action)=>{
 	switch(action.type){
 		case types.LIST_ALL: return state; break;
     case types.ADD_TASK: 
-      console.log(action);
+      var newTask = {
+        id: initialState.length + 1,
+        name: action.task.name,
+        status: action.task.status
+      };
+      state.push(newTask);
+      localStorage.setItem('tasks', JSON.stringify(state));
+      return [...state];
 		default: return state;
 	}
 	return state;

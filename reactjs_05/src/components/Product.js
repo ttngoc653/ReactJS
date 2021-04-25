@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
 
 class Product extends Component {
+
+  constructor(props) {
+    super(props);
+    this.ClickBuy = this.ClickBuy.bind(this);
+  }
+
+  ClickBuy() {
+    console.log(this.props.product_name);
+  }
+
   render() {
     return (
       <div className="Product">
@@ -13,7 +23,7 @@ class Product extends Component {
               { this.props.product_price } VNĐ
             </p>
             <p>
-              <a href="#" className="btn btn-primary">Buy</a>
+              <a href="#" className="btn btn-primary" onClick={ this.ClickBuy }>Buy</a>
               <a href="#" className="btn btn-default">Detail</a>
             </p>
           </div>

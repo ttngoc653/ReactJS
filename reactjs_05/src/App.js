@@ -3,6 +3,10 @@ import './App.css';
 import Product from './components/Product'
 
 class App extends Component {
+  ClickMeEvent() {
+    console.log('iitititittittttititititti');
+  }
+
   render() {
     var products = [
       {
@@ -65,6 +69,12 @@ class App extends Component {
           <div className="row">
             <div className="col-xs-12 col-sm-10 col-md-12 col-lg-12">
               { element_products }
+            </div>
+            <div className="col-xs-12 col-sm-10 col-md-12 col-lg-12 float-center">
+              <button 
+                type="button" 
+                className="btn btn-info"
+                onClick={ this.ClickMeEvent }>Click me!</button>
             </div>
           </div>
         </div>

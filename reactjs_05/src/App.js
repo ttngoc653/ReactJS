@@ -61,7 +61,7 @@ class App extends Component {
       <div className="App">
       <nav className="navbar navbar-inverse">
         <div className="container-fluid">
-          <a className="navbar-brand">Props</a>
+          <div className="navbar-brand">Props</div>
         </div>
       </nav>  
       <div className="container">

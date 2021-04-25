@@ -2,13 +2,27 @@ import React, { Component } from 'react';
 
 class Product extends Component {
 
-  constructor(props) {
-    super(props);
-    this.ClickBuy = this.ClickBuy.bind(this);
+  ClickBuy(text) {
+    let show_text = 'Buy ' + text;
+    console.log(show_text);
+    alert('Way 1\n' + show_text)
   }
 
-  ClickBuy() {
-    console.log(this.props.product_name);
+  constructor(props) {
+    super(props);
+    this.ClickDetail = this.ClickDetail.bind(this);
+  }
+
+  ClickDetail() {
+    let show_text = 'Detail of ' + this.props.product_name;
+    console.log(show_text);
+    alert('Way 2\n(Condition: must create a constructor) \n' + show_text)
+  }
+
+  ClickHide = () => {
+    let show_text = 'Hide ' + this.props.product_price;
+    console.log(show_text);
+    alert('Way 3\n' + show_text)
   }
 
   render() {
@@ -23,8 +37,9 @@ class Product extends Component {
               { this.props.product_price } VNĐ
             </p>
             <p>
-              <a href="#" className="btn btn-primary" onClick={ this.ClickBuy }>Buy</a>
-              <a href="#" className="btn btn-default">Detail</a>
+              <button className="btn btn-primary" onClick={ () => { this.ClickBuy(this.props.children) } }>Buy</button>
+              <button className="btn btn-default" onClick={ this.ClickDetail }>Detail</button>
+              <button className="btn btn-danger" onClick={ this.ClickHide }>Hide</button>
             </p>
           </div>
         </div>

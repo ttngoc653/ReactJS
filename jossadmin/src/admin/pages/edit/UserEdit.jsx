@@ -1,18 +1,34 @@
 import './edit.scss';
 import { userRows } from "../../../dummyData.js";
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { useState } from 'react';
 
 export default function UserEdit() {
     const params = useParams();
     const user = userRows.find((item) => {
-        return item.id==params.id
+        return item.id == params.id
     });
+
+    const [avatar, setAvatar] = useState(user.avatar);
+
+    const onImageChange = event => {
+        if (event.target.files && event.target.files[0]) {
+            setAvatar(URL.createObjectURL(event.target.files[0]));
+        }
+    };
+
+    const onUrlImageChange = event => {
+        const input = event.currentTarget;
+        setAvatar(input.value);
+    }
 
     return (
         <div className="edit">
             <div className="editTitleContainer">
                 <h1 className="editTitle">Edit user</h1>
-                <button className="editCreateButton">Create</button>
+                <Link to="/admin/users/new">
+                    <button className="createButton">Create</button>
+                </Link>
             </div>
             <div className="editContainer">
                 <div className="editShow">
@@ -60,9 +76,10 @@ export default function UserEdit() {
                             </div>
                             <div className="editUpdateRight">
                                 <div className="editUpdateUpload">
-                                    <img className="editUpdateImg" src={user.avatar} alt="" />
+                                    <img className="editUpdateImg" src={avatar} alt="" />
                                     <label htmlFor="file"><i className="bi bi-upload editUpdateIcon"></i></label>
-                                    <input type="file" id="file" style={{display: "none"}} />
+                                    <input type="file" id="file" style={{ display: "none" }} onChange={onImageChange} />
+                                    <input type="text" onChange={ onUrlImageChange } />
                                 </div>
                                 <button className="editUpdateButton">Update</button>
                             </div>

@@ -71,7 +71,12 @@ export const UserList = ({ content }) => {
 
     return (
         <div className="list">
-            <h2>UserList {content}</h2>
+            <div className="listTitleContainer">
+                <h2>UserList {content}</h2>
+                <Link to="/admin/users/new">
+                    <button className="createButton">Create</button>
+                </Link>
+            </div>
             <DataGrid
                 rows={data}
                 columns={userColumns}

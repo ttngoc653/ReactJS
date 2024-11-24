@@ -9,6 +9,8 @@ import List from "./pages/list/List";
 import UserList from "./pages/list/UserList";
 import LogIn from "./pages/login/LogIn";
 import UserEdit from "./pages/edit/UserEdit";
+import UserAdd from "./pages/add/UserAdd";
+import CustomAdd from "./pages/add/CustomAdd";
 
 const Admin = () => {
     return (
@@ -20,38 +22,30 @@ const Admin = () => {
                     <Routes>
                         <Route exact path="" element={<Dashboard />} />
                         <Route exact path="login" element={<LogIn />} />
-                        <Route exact path="links" element={<List content="links" />}>
-                            <Route exact path=":id" element={<Edit />} />
-                            <Route exact path="new" element={<Edit />} />
-                        </Route>
-                        <Route exact path="menu" element={<List content="menu" />}>
-                            <Route exact path=":id" element={<Edit />} />
-                            <Route exact path="new" element={<Edit />} />
-                        </Route>
-                        <Route exact path="blogs" element={<List content="blogs" />}>
-                            <Route exact path=":id" element={<Edit />} />
-                            <Route exact path="new" element={<Edit />} />
-                        </Route>
-                        <Route exact path="products" element={<List content="products" />}>
-                            <Route exact path=":id" element={<Edit />} />
-                            <Route exact path="new" element={<Edit />} />
-                        </Route>
-                        <Route exact path="groups" element={<List content="groups" />}>
-                            <Route exact path=":id" element={<Edit />} />
-                            <Route exact path="new" element={<Edit />} />
-                        </Route>
-                        <Route exact path="manufacturers" element={<List content="manufacturers" />}>
-                            <Route exact path=":id" element={<Edit />} />
-                            <Route exact path="new" element={<Edit />} />
-                        </Route>
-                        <Route exact path="users" element={<UserList content="users" />}>
-                            <Route exact path="new" element={<Edit />} />
-                        </Route>
+                        <Route exact path="links" element={<List content="links" />} />
+                        <Route exact path="links/:id" element={<Edit />} />
+                        <Route exact path="links/create" element={<CustomAdd />} />
+                        <Route exact path="menu" element={<List content="menu" />} />
+                        <Route exact path="menu/:id" element={<Edit />} />
+                        <Route exact path="menu/create" element={<CustomAdd />} />
+                        <Route exact path="blogs" element={<List content="blogs" />} />
+                        <Route exact path="blogs/:id" element={<Edit />} />
+                        <Route exact path="blogs/create" element={<CustomAdd />} />
+                        <Route exact path="products" element={<List content="products" />} />
+                        <Route exact path="products/:id" element={<Edit />} />
+                        <Route exact path="products/create" element={<CustomAdd />} />
+                        <Route exact path="groups" element={<List content="groups" />} />
+                        <Route exact path="groups/:id" element={<Edit />} />
+                        <Route exact path="groups/create" element={<CustomAdd />} />
+                        <Route exact path="manufacturers" element={<List content="manufacturers" />} />
+                        <Route exact path="manufacturers/:id" element={<Edit />} />
+                        <Route exact path="manufacturers/create" element={<CustomAdd />} />
+                        <Route exact path="users" element={<UserList content="users" />} />
+                        <Route exact path="users/create" element={<UserAdd />} />
                         <Route exact path="user/:id" element={<UserEdit />} />
-                        <Route exact path="tools" element={<List content="tools" />}>
-                            <Route exact path=":id" element={<Edit />} />
-                            <Route exact path="new" element={<Edit />} />
-                        </Route>
+                        <Route exact path="tools" element={<List content="tools" />} />
+                        <Route exact path="tools/:id" element={<Edit />} />
+                        <Route exact path="tools/create" element={<CustomAdd />} />
                         <Route exact path="settings" element={<Dashboard />} />
                     </Routes>
                 </div>

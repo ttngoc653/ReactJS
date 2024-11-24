@@ -1,0 +1,52 @@
+.addContainer {
+    flex: 4;
+}
+
+.addForm {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.addItem {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+    .addItem > label {
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        color: gray;
+    }
+
+    .addItem > input {
+        height: 20px;
+        padding: 10px;
+        border: 1px solid gray;
+        border-radius: 5px;
+    }
+
+input[type="radio"] {
+    margin-top: 15px;
+}
+
+.addRadio > label {
+    margin: 10px;
+    font-size: 18px;
+    color: lightslategray;
+}
+
+select {
+    height: 40px;
+    border-radius: 5px;
+}
+
+.addCreateButton {
+    width: 200px;
+    background-color: darkblue;
+    padding: 7px 10px;
+    margin-top: 30px;
+}

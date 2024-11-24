@@ -1,5 +1,5 @@
-import './sidebar.scss'
-import { Link } from 'react-router-dom'
+import './sidebar.scss';
+import { Link } from 'react-router-dom';
 
 const SideBar = () => {
   return (
@@ -27,56 +27,99 @@ const SideBar = () => {
                 Functions
               </div>
             </li>
-            <li>
+            <li className='hasButtonCreate'>
               <Link to="menu" className="nav-link px-3">
                 <span className="me-2">
                   <i className="bi bi-book-fill"></i>
                 </span>
                 <span>Menu</span>
               </Link>
+              <Link to="menu/create" className="nav-link px-3" style={{ float: 'right', color: 'gray', top: '-40px' }}>
+                  <span className="me-0">
+                      <i className="bi bi-plus-square-dotted"></i>
+                  </span>
+              </Link>
             </li>
-            <li>
+            <li className='hasButtonCreate'>
               <Link to="blogs" className="nav-link px-3">
                 <span className="me-2">
                   <i className="bi bi-book-fill"></i>
                 </span>
                 <span>Blog</span>
               </Link>
+              <Link to="blogs/create" className="nav-link px-3" style={{ float: 'right', color: 'gray' }}>
+                  <span className="me-0">
+                      <i className="bi bi-plus-square-dotted"></i>
+                  </span>
+              </Link>
             </li>
-            <li>
+            <li className='hasButtonCreate'>
               <Link to="links" className="nav-link px-3">
                 <span className="me-2">
                   <i className="bi bi-book-fill"></i>
                 </span>
                 <span>Links</span>
               </Link>
+              <Link to="links/create" className="nav-link px-3" style={{ float: 'right', color: 'gray' }}>
+                  <span className="me-0">
+                      <i className="bi bi-plus-square-dotted"></i>
+                  </span>
+              </Link>
             </li>
-            <li>
+            <li className='hasButtonCreate'>
               <Link to="products" className="nav-link px-3">
                 <span className="me-2">
                   <i className="bi bi-book-fill"></i>
                 </span>
                 <span>Products</span>
               </Link>
+              <Link to="products/create" className="nav-link px-3" style={{ float: 'right', color: 'gray' }}>
+                  <span className="me-0">
+                      <i className="bi bi-plus-square-dotted"></i>
+                  </span>
+              </Link>
             </li>
-            <li>
+            <li className='hasButtonCreate'>
               <Link to="groups" className="nav-link px-3">
                 <span className="me-2">
                   <i className="bi bi-book-fill"></i>
                 </span>
                 <span>Groups</span>
               </Link>
+              <Link to="groups/create" className="nav-link px-3" style={{ float: 'right', color: 'gray' }}>
+                  <span className="me-0">
+                      <i className="bi bi-plus-square-dotted"></i>
+                  </span>
+              </Link>
             </li>
-            <li>
+            <li className='hasButtonCreate'>
               <Link to="manufacturers" className="nav-link px-3">
                 <span className="me-2">
                   <i className="bi bi-book-fill"></i>
                 </span>
                 <span>Manufacturers</span>
               </Link>
+              <Link to="manufacturers/create" className="nav-link px-3" style={{ float: 'right', color: 'gray' }}>
+                  <span className="me-0">
+                      <i className="bi bi-plus-square-dotted"></i>
+                  </span>
+              </Link>
+            </li>
+            <li className='hasButtonCreate'>
+              <Link to="users" className="nav-link px-3">
+                  <span className="me-2">
+                      <i className="bi bi-book-fill"></i>
+                  </span>
+                  <span>Users</span>
+              </Link>
+              <Link to="users/create" className="nav-link px-3" style={{ float: 'right', color: 'gray' }}>
+                  <span className="me-0">
+                      <i className="bi bi-plus-square-dotted"></i>
+                  </span>
+              </Link>
             </li>
             <li>
-              <Link to="manufacturers" className="nav-link px-3">
+              <Link to="tools" className="nav-link px-3">
                 <span className="me-2">
                   <i className="bi bi-book-fill"></i>
                 </span>

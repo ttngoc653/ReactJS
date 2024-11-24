@@ -6,7 +6,7 @@ import { useState } from 'react';
 export default function UserEdit() {
     const params = useParams();
     const user = userRows.find((item) => {
-        return item.id === params.id
+        return item.id.toString() === params.id
     });
 
     const [avatar, setAvatar] = useState(user.avatar);

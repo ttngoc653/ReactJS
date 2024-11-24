@@ -8,6 +8,7 @@ import Edit from "./pages/edit/Edit";
 import List from "./pages/list/List";
 import UserList from "./pages/list/UserList";
 import LogIn from "./pages/login/LogIn";
+import UserEdit from "./pages/edit/UserEdit";
 
 const Admin = () => {
     return (
@@ -44,9 +45,9 @@ const Admin = () => {
                             <Route exact path="new" element={<Edit />} />
                         </Route>
                         <Route exact path="users" element={<UserList content="users" />}>
-                            <Route exact path=":id" element={<Edit />} />
                             <Route exact path="new" element={<Edit />} />
                         </Route>
+                        <Route exact path="user/:id" element={<UserEdit />} />
                         <Route exact path="tools" element={<List content="tools" />}>
                             <Route exact path=":id" element={<Edit />} />
                             <Route exact path="new" element={<Edit />} />

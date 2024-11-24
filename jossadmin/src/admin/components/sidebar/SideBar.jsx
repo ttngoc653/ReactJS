@@ -120,7 +120,7 @@ const SideBar = () => {
                   <li>
                     <Link onClick={console.log("click mode Light")} className="nav-link px-3">
                       <span className="me-2">
-                        <i className="bi bi-lamp"></i>
+                        <i className="bi bi-speedometer2"></i>
                       </span>
                       <span>Light</span>
                     </Link>
@@ -128,7 +128,7 @@ const SideBar = () => {
                   <li>
                     <Link onClick={console.log("click mode Dark")} className="nav-link px-3">
                       <span className="me-2">
-                        <i className="bi bi-lightbulb"></i>
+                        <i className="bi bi-speedometer2"></i>
                       </span>
                       <span>Dark</span>
                     </Link>

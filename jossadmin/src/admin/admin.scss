@@ -35,3 +35,14 @@
     top: var(--topNavbarHeight);
   }
 }
+
+.createButton {
+    width: 80px;
+    border: none;
+    padding: 5px;
+    background-color: teal;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+}

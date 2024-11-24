@@ -1,4 +1,4 @@
-﻿import "./featuredInfo.css";
+import "./featuredInfo.css";
 
 export default function FeaturedInfo() {
     return (

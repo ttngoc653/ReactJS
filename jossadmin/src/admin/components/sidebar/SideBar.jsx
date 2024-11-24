@@ -76,7 +76,15 @@ const SideBar = () => {
               </Link>
             </li>
             <li>
-              <Link to="manufacturers" className="nav-link px-3">
+              <Link to="users" className="nav-link px-3">
+                <span className="me-2">
+                  <i className="bi bi-book-fill"></i>
+                </span>
+                <span>Users</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="tools" className="nav-link px-3">
                 <span className="me-2">
                   <i className="bi bi-book-fill"></i>
                 </span>

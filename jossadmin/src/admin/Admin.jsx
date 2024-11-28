@@ -11,6 +11,7 @@ import LogIn from "./pages/login/LogIn";
 import UserEdit from "./pages/edit/UserEdit";
 import UserAdd from "./pages/add/UserAdd";
 import CustomAdd from "./pages/add/CustomAdd";
+import MenuEdit from "./pages/edit/MenuEdit";
 
 const Admin = () => {
     return (
@@ -25,7 +26,7 @@ const Admin = () => {
                         <Route exact path="links" element={<List content="links" />} />
                         <Route exact path="links/:id" element={<Edit />} />
                         <Route exact path="links/create" element={<CustomAdd />} />
-                        <Route exact path="menu" element={<List content="menu" />} />
+                        <Route exact path="menu" element={<MenuEdit />} />
                         <Route exact path="menu/:id" element={<Edit />} />
                         <Route exact path="menu/create" element={<CustomAdd />} />
                         <Route exact path="blogs" element={<List content="blogs" />} />

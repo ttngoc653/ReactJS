@@ -19,4 +19,4 @@ export const Dashbroad = () => {
   )
 }
 
-export default Dashbroad
+export default Dashbroad;

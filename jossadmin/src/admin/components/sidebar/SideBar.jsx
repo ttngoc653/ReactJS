@@ -34,11 +34,6 @@ const SideBar = () => {
                 </span>
                 <span>Menu</span>
               </Link>
-              <Link to="menu/create" className="nav-link px-3" style={{ float: 'right', color: 'gray', top: '-40px' }}>
-                  <span className="me-0">
-                      <i className="bi bi-plus-square-dotted"></i>
-                  </span>
-              </Link>
             </li>
             <li className='hasButtonCreate'>
               <Link to="blogs" className="nav-link px-3">
